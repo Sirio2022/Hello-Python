@@ -57,3 +57,62 @@ data_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 data_list.remove(
     5  # Removing the element 5 from the list
 )
+
+
+encrypted_floors = [
+    [9, 8, 5, 4],
+    [7, 6, 3, 2],
+    [4, 5, 6, 3],
+    [1, 5, 9, 0]
+]
+
+flat_list = []
+
+
+for row in encrypted_floors:
+    for value in row:
+        flat_list.append(value)  # Flattening the list by appending each value
+
+# i = 0
+# j = len(flat_list) -1
+#
+# while i <= j:
+#     flat_list[i], flat_list[j] = flat_list[j], flat_list[i]  # Swapping elements
+#     i += 1
+#     j -= 1
+
+flat_list.reverse()  # Reversing the flat list
+
+print("Reversed Flat List:", flat_list)
+
+# Identify the row with the highest production, and bring its production to zero
+drone_production = [
+    [5, 2, 3, 4],
+    [8, 1, 6, 7],
+    [3, 9, 2, 5, 9],
+    [4, 7, 8, 6]
+]
+
+max_production_index = 0
+max_production_value = sum(drone_production[0])  # Initialize with the first row's sum
+
+for i in range(1, len(drone_production)):
+    current_production_value = sum(drone_production[i])  # Calculate the sum of the current row
+    if current_production_value > max_production_value:
+        max_production_value = current_production_value  # Update the maximum production value
+        max_production_index = i  # Update the index of the row with the highest production
+
+# Set the row with the highest production to zero
+drone_production[max_production_index] = [0] * len(drone_production[max_production_index])
+
+print("Drone Production after setting the highest production row to zero: ", drone_production)
+
+
+access_code = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+invalid_digit = 5
+
+# Remove the invalid digit from the access code
+while invalid_digit in access_code:
+    access_code.remove(invalid_digit)
+
+print("Access Code after removing invalid digit:", access_code)
