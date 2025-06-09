@@ -116,3 +116,76 @@ while invalid_digit in access_code:
     access_code.remove(invalid_digit)
 
 print("Access Code after removing invalid digit:", access_code)
+
+
+# Cells in row 0 stay the same.  Cell in row 1 increases by 1, row 2 decrease by 2.
+#  After adjusting, sum the values and print the total energy.
+
+energy_grid = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+for i in range(len(energy_grid)):
+    for j in range(len(energy_grid[i])):
+       energy_grid[i][j] -= i
+
+total_energy = 0
+
+for row in energy_grid:
+    for cell in row:
+        total_energy += cell  # Summing the values in the energy grid
+print("Total Energy after adjustments:", total_energy)
+
+
+# Extract even numers
+
+numers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+total = 0
+for number in numers:
+    if number % 2 == 0:  # Check if the number is even
+        total += number  # Add the even number to the total
+print("Total of even numbers:", total)
+
+# Eliminating duplicates from a list of laser sequences
+laser_sequence = [1, 2, 3, 4, 5, 1, 2, 3, 6, 7]
+
+seen_numbers = []
+rogue_lasers = []
+
+for number in laser_sequence:
+    if number not in seen_numbers:
+        seen_numbers.append(number)  # Add the number to the seen list if it's not already there
+    else:
+        rogue_lasers.append(number)  # If it's a duplicate, add it to the rogue lasers
+
+print("Unique Laser Sequences:", seen_numbers)
+
+
+# The bomb is armered, but its detonation sequence is incomplete.
+# Six control wires of varying lenghths determine when the bomb will explode.
+# However, only the middle four wires hold the correct timing data needed to activate the bomb.
+# Your mission is to analize the wire lengths and extract the crucial four wires.
+# And vereify if they match the activation key.
+
+wire_lengths = [10, 20, 30, 40, 50, 60]
+activation_key = [20, 30, 40, 50]
+
+sorted_wires = sorted(wire_lengths)  # Sort the wire lengths in ascending order
+selected_wires = sorted(activation_key)
+
+# Como deberia de ser la secuencia de activación
+# Ordenar las longitudes de los cables
+sorted_wires = sorted(wire_lengths)
+
+# Extraer los cuatro cables centrales
+middle_wires = sorted_wires[1:5]  # Índices 1 a 4 (excluyendo el último)
+
+# Verificar si coinciden con la clave de activación
+if middle_wires == activation_key:
+    print("La bomba está activada correctamente.")
+else:
+    print("Error: Los cables no coinciden con la clave de activación.")
+
