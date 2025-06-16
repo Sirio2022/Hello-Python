@@ -189,3 +189,102 @@ if middle_wires == activation_key:
 else:
     print("Error: Los cables no coinciden con la clave de activación.")
 
+
+# billboard_matrix = [
+#     [***********************],
+#     [**************************************],
+#     [**************************************]
+# ]
+#
+#
+# for i in range(len(billboard_matrix)):
+#     billboard_matrix[i] = billboard_matrix[i][::-1]  # Reversing each row
+
+
+list1 = [1000, 2420, 3210, 4120, 1250]
+list2 = [3220, 5340, 1590, 7860, 96542]
+
+combined_list = list1+list2
+unique_list = []
+
+
+for num in combined_list:
+  if num not in unique_list:
+    unique_list.append(num)
+
+
+reversed_list = list(reversed(unique_list))
+
+
+passcode = reversed_list[0]
+print("Passcode:", passcode)
+
+
+#
+initial_rotation = [10]
+
+replicating_rotation = 9
+
+
+rotation_steps = initial_rotation * replicating_rotation
+
+total_rotation = 0
+for step in rotation_steps:
+   total_rotation -= step
+
+
+print("Total crane rotation:", total_rotation, "degrees")
+
+power_levels = [10, 12, 27.5, 16, 40]
+
+
+even_levels = [] # Numeros pares
+odd_levels = [] # Numeros impares multiplicados por 2
+
+for num in power_levels:
+    if num % 2 == 0:
+        even_levels.append(num)
+    else:
+        odd_levels.append(num * 2)
+
+codes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+valid_codes = []
+
+for num in codes:
+    if num % 2 == 0:
+        valid_codes.append(num)
+
+access_code = 0
+
+access_code = sum(valid_codes)
+
+print("Access Code:", access_code)
+
+
+access_codes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+sum = 0
+
+
+for i in range(len(access_codes)):
+  if i % 2 == 0 and access_codes[i] % 5 == 0:
+    sum = sum + access_codes[i]
+
+
+
+
+scrambled = 'S3G78R1A2M4B5L6E9D0'
+
+result = ""
+
+for ch in scrambled:
+    if not ch.isdigit():
+        result += ch.lower()
+
+
+power_grids = ["grid-1", "grid-2", "grid-3", "grid-4"]
+
+current_power_connection = power_grids[4]
+
